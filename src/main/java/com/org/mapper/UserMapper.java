@@ -1,18 +1,11 @@
 package com.org.mapper;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.org.entity.User;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-/**
- * <p>
- *  Mapper 接口
- * </p>
- *
- * @author 刘文鑫
- * @since 2020-11-27
- */
 @Repository
-public interface UserMapper extends BaseMapper<User> {
-
+public interface UserMapper extends JpaRepository<User,Integer> {
+    User findByAccount(String s);
 }

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
-public class AuthenticationEnryPoint implements AuthenticationEntryPoint {
+public class AuthenticationEntryPoint0 implements org.springframework.security.web.AuthenticationEntryPoint {
 
     @Autowired
     Gson gson;

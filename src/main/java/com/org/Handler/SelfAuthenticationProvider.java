@@ -1,6 +1,7 @@
 package com.org.Handler;
 
-import com.org.serviceImpl.UserServiceImpl;
+import com.org.service.UserService;
+import com.org.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SelfAuthenticationProvider implements AuthenticationProvider{
     @Autowired
-    UserServiceImpl userServiceImpl;
+    UserService userService;
 
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -21,7 +22,7 @@ public class SelfAuthenticationProvider implements AuthenticationProvider{
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String account= authentication.getName();     //获取用户名
         String password= (String) authentication.getCredentials();  //获取密码
-        UserDetails userDetails= userServiceImpl.loadUserByUsername(account);
+        UserDetails userDetails= userService.loadUserByUsername(account);
         boolean checkPassword= bCryptPasswordEncoder.matches(password,userDetails.getPassword());
         if(!checkPassword){
             throw new BadCredentialsException("密码不正确，请重新登录!");

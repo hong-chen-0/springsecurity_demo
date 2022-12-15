@@ -1,6 +1,6 @@
 package com.org.configure;
 import com.org.Handler.*;
-import com.org.serviceImpl.UserServiceImpl;
+import com.org.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -15,7 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SpringsecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    AuthenticationEnryPoint authenticationEnryPoint;    //未登录
+    AuthenticationEntryPoint0 authenticationEntryPoint0;    //未登录
     @Autowired
     AuthenticationSuccess authenticationSuccess;    //登录成功
     @Autowired
@@ -31,7 +31,7 @@ public class SpringsecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return new UserServiceImpl();
+        return new UserService();
     }
 
     //加密方式
@@ -72,7 +72,7 @@ public class SpringsecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and().exceptionHandling()
                 .accessDeniedHandler(accessDeny)    //权限不足的时候的逻辑处理
-                .authenticationEntryPoint(authenticationEnryPoint)  //未登录是的逻辑处理
+                .authenticationEntryPoint(authenticationEntryPoint0)  //未登录是的逻辑处理
 
                 .and()
                 .sessionManagement()
