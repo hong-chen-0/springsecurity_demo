@@ -1,6 +1,8 @@
 # springsecurity_demo
 SpringSecurity模板、涉及登录、角色权限验证，注册需要自己开发
 
+验证通过session
+
 参考教程
 
 https://blog.csdn.net/weixin_42375707/article/details/110678638
