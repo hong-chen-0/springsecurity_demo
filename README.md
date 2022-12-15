@@ -25,6 +25,14 @@ AuthenticationManager 本身不包含认证逻辑，其核心是用来管理所�
 
 .antMatchers("/index").hasRole("USER")
 
- .antMatchers("/hello").hasRole("ADMIN")
+.antMatchers("/hello").hasRole("ADMIN")
  
- 修改been、mysql、端口、redis部分即可自己使用
+⭐修改been、mysql、端口、redis
+ 
+⭐把Mapper类对MyBatis的继承改为JpaRepository，并增加findByAccount查询方法
+ 
+⭐把Impl类删除，把里面对UserDetailsService的实现移动导Service类
+ 
+⭐Service类里所有依赖MyBatis的方法全部改为JPA方法
+
+⭐改造成功
