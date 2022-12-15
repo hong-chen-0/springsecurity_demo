@@ -1,7 +1,6 @@
 package com.org.Handler;
 
 import com.org.service.UserService;
-import com.org.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;

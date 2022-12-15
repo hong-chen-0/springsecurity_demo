@@ -3,7 +3,6 @@ package com.org.service;
 import com.org.entity.User;
 import com.org.mapper.UserMapper;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
