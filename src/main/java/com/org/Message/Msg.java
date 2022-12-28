@@ -10,6 +10,22 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Msg {
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return Message;
+    }
+
+    public void setMessage(String message) {
+        Message = message;
+    }
+
     int code;   //错误码
     String Message; //消息提示
     Map<String,Object> data=new HashMap<String,Object>();   //数据
