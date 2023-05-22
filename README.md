@@ -1,4 +1,7 @@
 # springsecurity_demo
+
+⭐⭐⭐一定要配合前端java_react使用⭐⭐⭐
+
 SpringSecurity模板、涉及登录、角色权限验证，注册需要自己开发
 
 验证通过session
